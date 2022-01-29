@@ -15,7 +15,7 @@ after = '5d'
 size = 400
 
 
-def get_data(subreddit, query, befor, after, size=100, data_type='comment'):
+def get_data(subreddit, query, before, after, size=100, data_type='comment'):
 
     data = requests.get(f'{base_url}{data_type}/?q={query}&subreddit={subreddit}&before={before}&after={after}&size={size}')
     df = pd.json_normalize(data.json()['data'])
